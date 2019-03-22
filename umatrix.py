@@ -352,10 +352,10 @@ class matrix(object):
         ''' scaler ** matrix elementwise power '''
         return self.__OP__(a, '**')
 
-    def copy(self):
+    def copy(self, dtype=None):
         """ Return a copy of matrix, not just a view """
         return matrix([i for i in self.data],
-                      cstride=self.cstride, rstride=self.rstride)
+                      cstride=self.cstride, rstride=self.rstride, dtype=dtype)
 
     def size(self, axis=0):
         """ 0 entries
